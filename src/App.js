@@ -7,12 +7,16 @@ import Profile from "./components/Profile";
 import { useAuth0 } from "./react-auth0-spa";
 import './App.css';
 import PrivateRoute from "./components/PrivateRoute";
+import Spinner from './components/Spinner'
 
 function App() {
   const { loading } = useAuth0();
 
   if (loading) {
-    return <div>Loading Details...</div>;
+    return ( <div className="App">
+      <Spinner/>
+      
+      </div> )
   }
 
   return (
